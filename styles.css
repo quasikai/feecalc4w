@@ -226,6 +226,10 @@ body {
   padding: 7px 30px;
 }
 
+.subm-button--add {
+  background-color: #45ad00;
+}
+
 .subm-button--minor:active {
   box-shadow: inset 0px 0px 50px 3px rgba(0, 0, 0, 0.55);
 }

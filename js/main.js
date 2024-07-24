@@ -1,11 +1,21 @@
 let op;
 
-const numArray = [];
+const numArray = JSON.parse(localStorage.getItem("array")) || [];
+
+document.getElementById('log-output').innerHTML = numArray.join('<br>')
+document.getElementById('log-counter').innerHTML = numArray.length;
+document.getElementById('output').innerHTML = numArray[numArray.length - 1] || 0
+sum(numArray)
 
 function func() {
   let result;
   let docInput = document.getElementById('num1').value;
-  let num1 = Number(docInput.replaceAll(' ', ''));
+  let num1 = Number(docInput.replaceAll(' ', '').replaceAll(' ', ''));
+  if (!num1) {
+    document.getElementById('output').innerHTML = 'Error!'
+    document.getElementById('output-span').innerHTML = ''
+    return
+  }
   switch (op) {
     case '1%':
       result = Math.floor(num1 - num1 * 0.01);
@@ -19,9 +29,17 @@ function func() {
     case '2.5%':
       result = Math.floor(num1 - num1 * 0.025);
       break;
+    case '3%':
+      result = Math.floor(num1 - num1 * 0.03);
+      break;
+    case 'add':
+      result = num1;
+      break;
   }
   numArray.push(result);
+  localStorage.setItem('array', JSON.stringify(numArray))
   document.getElementById('output').innerHTML = result;
+  document.getElementById('output-span').innerHTML = '$'
   document.getElementById('log-output').innerHTML = numArray.join('<br>');
   document.getElementById('log-counter').innerHTML = numArray.length;
 }
@@ -56,6 +74,7 @@ const cleanOutput = () => {
 
 function delLastVal() {
   numArray.pop();
+  localStorage.setItem('array', JSON.stringify(numArray))
   document.getElementById('log-output').innerHTML = numArray.join('<br>');
   document.getElementById('log-counter').innerHTML = numArray.length;
 }

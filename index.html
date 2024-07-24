@@ -19,12 +19,12 @@
   <body>
     <div class="backdrop">
       <div class="summ-modal">
-        <button type="button" class="page-refresh" onClick="history.go(0);"></button>
+        <button type="button" class="page-refresh" onClick="history.go(0); localStorage.clear()"></button>
         <div class="fee-wrap">
           <input class="fee-input" placeholder="enter value for fee calculation" id="num1" />
           <div class="fee-output-wrap">
             <p class="total-number fee-output fee-output--copy" id="output">0</p>
-            <p class="fee-output__span fee-output--copy">$</p>
+            <p class="fee-output__span fee-output--copy" id="output-span">$</p>
           </div>
           <div class="buttons-wrap">
             <button
@@ -50,6 +50,18 @@
               onclick="op='2.2%', func(), cleanInput(), sum(numArray)"
             >
               2.2%
+            </button>
+            <button
+              class="subm-button subm-button--minor subm-button--add button"
+              onclick="op='add', func(), cleanInput(), sum(numArray)"
+            >
+              add
+            </button>
+            <button
+              class="subm-button subm-button--minor button"
+              onclick="op='3%', func(), cleanInput(), sum(numArray)"
+            >
+              3%
             </button>
           </div>
         </div>
