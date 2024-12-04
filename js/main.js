@@ -20,14 +20,14 @@ function func() {
     case '1%':
       result = Math.floor(num1 - num1 * 0.01);
       break;
-    case '2.2%':
-      result = Math.floor(num1 - num1 * 0.022);
+    case '2.5%':
+      result = Math.floor(num1 - num1 * 0.025);
       break;
     case '-50':
       result = Math.floor(num1 - 50);
       break;
-    case '2.5%':
-      result = Math.floor(num1 - num1 * 0.025);
+    case '1.5%':
+      result = Math.floor(num1 - num1 * 0.015);
       break;
     case '3%':
       result = Math.floor(num1 - num1 * 0.03);
