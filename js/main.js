@@ -7,6 +7,18 @@ document.getElementById('log-counter').innerHTML = numArray.length;
 document.getElementById('output').innerHTML = numArray[numArray.length - 1] || 0
 sum(numArray)
 
+document.addEventListener("keydown", (event) => {
+  if (
+    event.code === "Enter" ||
+    event.code === "NumpadEnter" ||
+    event.code === "Equal" || 
+    event.code === "NumpadAdd" 
+  ) {
+    event.preventDefault();
+    document.querrySelector(".subm-button--add").click();
+  }
+});
+
 function func() {
   let result;
   let docInput = document.getElementById('num1').value;
@@ -18,7 +30,7 @@ function func() {
   }
   switch (op) {
     case '1%':
-      result = Math.floor(num1 - num1 * 0.01);
+      result = Math.floor(num1 - num1 * 0.00991);
       break;
     case '2.5%':
       result = Math.floor(num1 - num1 * 0.025);
@@ -26,8 +38,8 @@ function func() {
     case '-50':
       result = Math.floor(num1 - 50);
       break;
-    case '1.5%':
-      result = Math.floor(num1 - num1 * 0.015);
+    case '1.4%':
+      result = Math.floor(num1 - num1 * 0.01381);
       break;
     case '3%':
       result = Math.floor(num1 - num1 * 0.03);
