@@ -15,7 +15,7 @@ document.addEventListener("keydown", (event) => {
     event.code === "NumpadAdd" 
   ) {
     event.preventDefault();
-    document.querrySelector(".subm-button--add").click();
+    document.querySelector(".subm-button--add").click();
   }
 });
 
